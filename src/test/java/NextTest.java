@@ -121,8 +121,13 @@ public class NextTest {
         drv.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='The Linen Shop']"))).click();
         Thread.sleep(3000);
 
-        driver.findElement(By.xpath("")).click();
+        drv.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Category']"))).click();
+        drv.until(ExpectedConditions.elementToBeClickable(By.xpath("//span//span[text()='Dresses']"))).click();
 
+        drv.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='plp-1rwsnke']//span[text()='1' and 'selected']")));
+        boolean dress = driver.findElement(By.xpath("//span//span[text()='Dresses']")).isSelected();
+        System.out.println(dress);
+        Thread.sleep(3000);
 // //ul/li[starts-with(@class,'sbct')] - autosugesttion lists.
         //Alert alert = driver.switchTo().alert();
         //System.out.println(alert.getText());
